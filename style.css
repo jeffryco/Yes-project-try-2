@@ -11,55 +11,27 @@ body
   font-family:  Verdana;
 }
 
-.menufond
+a
 {
+  text-decoration: none;
+  color:black;
+}
+
+section
+{
+  margin: 2% 5%;
   display: flex;
   flex-direction: column;
-}
 
-.menufond a
-{
-  text-decoration: none;
-  color:black;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  text-align: center;
-  margin-right: 10%;
-  margin-left: 10%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: rgb(78, 245, 137);
-  text-align: center;
   border-radius : 20px;
-}
-
-.menufond a:hover
-{
-  background-color: rgb(78, 228, 200);
-}
-
-
-.formulaire
-{
+  background-color: rgb(78, 245, 137);
+  padding: 1% 5%;
+  
+  overflow-x:auto;
   text-decoration: none;
   color:black;
   text-align: center;
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  
-  border-radius: 15px;
-  overflow: hidden;
-  padding: 4% 4% 4% 4%;
-  
-  background-color: rgb(43, 232, 227);
-  background: #80c64a;
-  background: -webkit-linear-gradient(rgb(10, 100, 130),rgb(43, 232, 227),#2bec9c);
-  background: linear-gradient(rgb(10, 100, 130),rgb(43, 232, 227),#2bec9c);
 }
-
-
 
 table, th, td
 {
@@ -71,6 +43,7 @@ table
 {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 2%
 }
 .listof tr:hover 
 {
@@ -79,7 +52,8 @@ table
 
 
 /* Style the links inside the navigation bar */
-nav a {
+nav a 
+{
   color: #f2f2f2;
   text-align: center;
   padding: 10px 10px;
@@ -101,9 +75,8 @@ nav a.active {
 
 nav
 {
-    margin: 20px
+    margin: 20px;
 }
-
 
 .add_button
 {
@@ -118,11 +91,21 @@ nav
 }
 
 
+.name_setting
+{
+    color: black;
+    font-size: medium;
+    height: 40px;
+    width: 350px;
+    text-align: center;
+}
+
+
 .validatebutton {
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: #555555;
-  line-height: 1.2;
+  color: black;
+  line-height: 1.2px;
   text-transform: uppercase;
   text-align: center;
   display: -webkit-box;
@@ -143,6 +126,7 @@ nav
   background: linear-gradient(rgb(10, 100, 130),r#2bec9c);
 
   transition: all 0.5s;
+  margin: 10px;
 }
 
 .validatebutton::before {
@@ -166,4 +150,32 @@ nav
 
 .validatebutton:hover:before {
   opacity: 0;
+}
+
+
+.stepRecipe
+{
+    border-top: 2px solid black;
+    border: 10px;
+}
+
+
+.formulaire
+{
+  text-decoration: none;
+  color:black;
+  text-align: center;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 4% 4% 4% 4%;
+  
+  background-color: rgb(43, 232, 227);
+  background: #80c64a;
+  background: -webkit-linear-gradient(rgb(10, 100, 130),rgb(43, 232, 227),#2bec9c);
+  background: linear-gradient(rgb(10, 100, 130),rgb(43, 232, 227),#2bec9c);
 }
