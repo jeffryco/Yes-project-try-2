@@ -15,13 +15,13 @@ and open the template in the editor.
     
     
     <body>
-        <section class ="formulaire" style="overflow-x:auto;">
+        <section>
             <h1> Ajouter un ingrédient au stock </h1>
  
-            <form method="post" action="postInscription">
+            <form method="post" action="ajoutStock">
                 
                 <div>
-                    <strong> <label> Nom de l'ingrédient à ajouter  </label> : 
+                    <strong> Nom de l'ingrédient à ajouter </strong>
                     <select name="ingredient_choisi" id="ingredient_choisi">
                         <option value="tout">Afficher la liste des ingredient actifs</option>
                         <option value="Afficher">Afficher</option>
@@ -30,64 +30,65 @@ and open the template in the editor.
                         <option value="des">des</option>
                         <option value="ingredient">ingredient</option>
                         <option value="actifs">actifs</option>
-                    </select> </strong> <br/> <br/> <br/>
+                    </select>  
+                </div> <br/> <br/> 
                     
-                    <div>
-                        <table>
-                            <thead>
-                                <th> Paramètre </th>
-                                <th> Description du paramètre </th>
-                                <th> Valeur </th>
-                            </thead>
-                            
-                            
-                            <tbody>
-                                <tr>
-                                    <td> Date de réception </td>
-                                    <td> Date de reception d'un ingrédient de ce type sur site </td>
-                                    <td> <input type="date" class="lesinputs" name="date_reception" id="date_reception" /> </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td> Nom du fournisseur </td>
-                                    <td> Nom du fournisseur pour ce batch d'ingrédient </td>
-                                    <td> <input type="text" class="lesinputs" name="nom_fournisseur" id="nom_fournisseur" /> </td>
-                                </tr>    
-                                
-                                <tr>
-                                    <td> Région d’origine </td>
-                                    <td> Région ou pays de transformation </td>
-                                    <td> <input type="text" class="lesinputs" name="origin" id="origin" /> </td>
-                                </tr>                               
-                                 
-                                <tr>
-                                    <td> Quantité initiale reçue </td>
-                                    <td> Quantité recue dans l'unité spécifiée </td>
-                                    <td> <input type="number" class="lesinputs" name="quantite_origin" id="quantite_origin" /> </td>
-                                    
-                                </tr>
-                               
-                                <tr>
-                                    <td> Unité de quantité </td>
-                                    <td> Unité pour les quantités recues et utilisées </td>
-                                    <td> <input type="text" class="lesinputs" name="unite" id="unite" /> </td>
-                                </tr>
-                               
-                                <tr>
-                                    <td> Date de d'expiration </td>
-                                    <td> Date de périssage de ce produit </td>
-                                    <td> <input type="date" class="lesinputs" name="date_reception" id="date_reception" /> </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div>
+                    <table>
+                        <thead>
+                            <th> Paramètre </th>
+                            <th> Description du paramètre </th>
+                            <th> Valeur </th>
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+                                <td> Date de réception </td>
+                                <td> Date de reception de ce stock sur site </td>
+                                <td> <input type="date" name="date_reception" id="date_reception" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td> Nom du fournisseur </td>
+                                <td> Nom du fournisseur de ce stock d'ingrédient  </td>
+                                <td> <input type="text"  name="nom_fournisseur" id="nom_fournisseur" /> </td>
+                            </tr>    
+
+                            <tr>
+                                <td>Origine </td>
+                                <td> Pays ou région d'origine de ce stock </td>
+                                <td> <input type="text" name="origin" id="origin" /> </td>
+                            </tr>                               
+
+                            <tr>
+                                <td> Unité de quantité </td>
+                                <td> Unité pour les quantités de ce stock </td>
+                                <td> <input type="text" name="unite" id="unite" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td> Quantité initiale reçue </td>
+                                <td> Quantité recue dans l'unité spécifiée </td>
+                                <td> <input type="number" name="quantite_origin" id="quantite_origin" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td> Date de d'expiration </td>
+                                <td> Date de périssage de ce stock </td>
+                                <td> <input type="date" name="date_reception" id="date_reception" /> </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div> <br/>
 
                     
                 <div class="add_button"> 
+                    <input class ="validatebutton" type="submit" value="Annuler" id="cancelButton" />
                     <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
-                </div>   
+                </div> 
                 
             </form>      
-        </sections>   
+        </section>   
     </body>
 </html>
