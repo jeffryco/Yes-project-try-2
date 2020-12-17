@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel= "stylesheet" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title> Modification de recettes </title>  
+    </head>
+    
+    
+    <body>
+        <section style="overflow-x:auto;">
+            <form method="post" action="postInscription">
+                
+                <h1> Modifier une recette </h1> <br/>
+                
+                <div class ="formulaire">
+                    <strong class="div_input validate-input" data-validate="Ce champs est nécessaire">
+                        <label>Nom de la recette </label> : 
+                        <input class="lesinputs" type="text" name="nom_ingredient" id="nom_ingredient" placeholder="Afficher la valeur actuelle?!?!?" size="30" required/>
+                    </strong> <br/> 
+                </div>
+                
+                
+                
+                <div class ="formulaire">
+                    <h2> Étape 1 </h2>
+                    
+                    <h3 class="div_input validate-input" data-validate="Ce champs est nécessaire">
+                        Nom de l'étape : 
+                        <input class="lesinputs" type="text" name="nom_ingredient" id="nom_ingredient" placeholder="Afficher la valeur actuelle?!?!?" size="30" required/>
+                    </h3> <br/> 
+                    
+                    
+                    <h3> Ingrédients néecessaires: </h3>
+                    <table >
+                        <thead>
+                            <th> Nom de l'ingrédient </th>
+                            <th> Unité de quantité </th>
+                            <th> Quantité nécessaire </th>
+                            <th> Autres spécifications </th>
+                        </thead>
+
+                        <tbody> 
+                            <tr>
+                                <td> 
+                                    <select name="ingredient_choisi" id="ingredient_choisi">
+                                        <option value="tout">Afficher la liste des ingredient actifs</option>
+                                        <option value="Afficher">Afficher</option>
+                                        <option value="la">la</option>
+                                        <option value="liste">liste</option>
+                                        <option value="des">des</option>
+                                        <option value="ingredient">ingredient</option>
+                                        <option value="actifs">actifs</option>
+                                    </select> 
+                                </td>
+                                <td> Afficher automatiquement, basé sur l'ingrédient </td>
+                                <td> <input type="number" class="lesinputs" name="quantite_besoin" id="quantite_besoin" placeholder="Afficher valeur actuelle"/> </td>
+                                <td> <textarea name="notes_ingredient" id="notes_ingredient" placeholder="Afficher valeur actuelle"> </textarea> </td>
+                            </tr>
+                        </tbody>            
+                    </table> <br/>
+                    
+                    <div class="add_button"> 
+                        <input class ="validatebutton" type="button" value="Ajouter un autre ingrédient" id="oneMoreRow"/>`<br/>
+                        <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
+                    </div> <br/>
+
+                    
+                    <h3> Input process: </h3>
+                    <table >
+                        <thead>
+                            <th> Nom du paramètre process </th>
+                            <th> Description du paramètre process </th>
+                        </thead>
+
+                        <tbody> 
+                            <tr>
+                                <td>  <input type="text" name="nom_parametre" id="nom_parametre" placeholder="Afficher la valeur actuelle?!?!?" size="30" /> </td>
+                                <td> <textarea name="notes_ingredient" id="notes_ingredient" placeholder="Afficher valeur actuelle"> </textarea> </td>
+                            </tr>
+                        </tbody>            
+                    </table> <br/>
+                    
+                    <div class="add_button"> 
+                        <input class ="validatebutton" type="button" value="Ajouter un autre ingrédient" id="oneMoreRow"/>`<br/>
+                        <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
+                    </div> <br/>
+                        
+                    
+                    
+                </div>
+                
+                <div class="add_button"> 
+                    <input class ="validatebutton" type="button" value="Ajouter une autre étape" id="oneMoreRow"/>`<br/>
+                    <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
+                </div> <br/>
+
+                
+                
+            </form>
+        
+        
+        </section>
+        
+    </body>
+</html>
