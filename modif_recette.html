@@ -6,6 +6,8 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel= "stylesheet" href="style.css">
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -18,91 +20,175 @@ and open the template in the editor.
 
         <section>
             <h1> Ajouter/ Modifier une recette </h1> 
-            <strong> 
+            <h2> 
                 Nom de la recette :
                 <input class = "name_setting" type="text" name="nom_ingredient" id="nom_ingredient" placeholder="Afficher la valeur actuelle?!?!?" required/> <br/> 
-             </strong>
+             </h2>
+            
+            <div class="add_button"> 
+                <input class ="validatebutton" type="submit" value="Enregistrer recette" id="submitButton" /> 
+                <input class ="validatebutton" type="submit" value="Archiver recette" id="archiveButton" /> 
+            </div>
         </section>
+            
+       
+        <section>   
+            <button class="accordion"> 
+                <h2> 
+                    Étape 1: 
+                    <input type="text" name="nom_etape" id="nom_etape" placeholder="Nom de l'étape" size="30" required/>
+                </h2> 
+            </button>
+                    
+            <div class="panel">
+                
+                <div class="w3-bar w3-aqua">
+                  <button class="w3-bar-item w3-button" onclick="openTab('ingredients')">Ingrédients</button>
+                  <button class="w3-bar-item w3-button" onclick="openTab('parametreProcess')">Paramètres</button>
+                </div>
+ 
+                <div class="tabthing" id="ingredients" >   
+                    <h3> Ingrédients </h3>
+
+                    <table>
+                        <thead>
+                            <th> Nom de l'ingrédient </th>
+                            <th> Unité de quantité </th>
+                            <th> Quantité nécessaire </th>
+                            <th> Autres spécifications </th>
+                            <th>  </th>
+                        </thead>
+
+                        <tbody> 
+                            <tr>
+                                <td> 
+                                    <select name="ingredient_choisi" id="ingredient_choisi">
+                                        <option value="tout">Ingredient actifs</option>
+                                        <option value="Afficher">Afficher</option>
+                                        <option value="ingredient">ingredient</option>
+                                        <option value="actifs">actifs</option>
+                                    </select> 
+                                </td>
+                                <td> Afficher automatiquement, basé sur l'ingrédient </td>
+                                <td> <input type="number" class="lesinputs" name="quantite_besoin" id="quantite_besoin" step="0.01" min="0" placeholder="Afficher valeur actuelle"/> </td>
+                                <td> <textarea name="notes_ingredient" id="notes_ingredient" placeholder="Afficher valeur actuelle"> </textarea> </td>
+                                <td> <button type="button" id="removeIngredient"> <img src="images/trash_img.png" alt="Enlever ingrédient" title="Supprimer ligne"/> </button> </td>
+                            </tr>
+                        </tbody>            
+                    </table> <br/>
+
+                    <div class="add_button"> 
+                        <input class ="validatebutton" type="button" value="Ajouter un autre ingrédient" id="oneMoreRow"/>
+                    </div>
+                </div>
+            
+
+                <div class="tabthing" id="parametreProcess" style="display:none">
+                    <h3> Paramètres process: </h3>
+                    <table >
+                        <thead>
+                            <th> Nom du paramètre process </th>
+                            <th> Description du paramètre process </th>
+                            <th> </th>
+                        </thead>
+
+                        <tbody> 
+                            <tr>
+                                <td>  <input type="text" name="nom_parametre" id="nom_parametre" placeholder="Afficher la valeur actuelle?!?!?" size="30" /> </td>
+                                <td> <textarea name="notes_ingredient" id="notes_ingredient" placeholder="Afficher valeur actuelle"> </textarea> </td>
+                                <td> <button type="button" id="removeParameter"> <img src="images/trash_img.png" alt="Enlever paramètre" title="Supprimer ligne"/> </button> </td>
+                            </tr>
+                        </tbody>            
+                    </table> <br/>
+
+
+                    <div class="add_button"> 
+                        <input class ="validatebutton" type="button" value="Ajouter un autre élément" id="oneMoreInput"/> <br/>
+                    </div>
+                </div>
+            </div>    
+        </section>
+            
+            
             
         <section>
-            <h2> 
-                Étape 1  <!-- Ici, on a besoin d'un compteur qui nous dit à quel numéro d'étape on est -->
-            </h2>
-            
-            
-            <h3>
-                Nom de l'étape : 
-                <input type="text" name="nom_etape" id="nom_etape" placeholder="Afficher la valeur actuelle?!?!?" size="30" required/>
-            </h3> <br/> 
-
-            <div class ="stepRecipe">
-                <h3> Ingrédients néecessaires: </h3>
-                <table >
-                    <thead>
-                        <th> Nom de l'ingrédient </th>
-                        <th> Unité de quantité </th>
-                        <th> Quantité nécessaire </th>
-                        <th> Autres spécifications </th>
-                    </thead>
-
-                    <tbody> 
-                        <tr>
-                            <td> 
-                                <select name="ingredient_choisi" id="ingredient_choisi">
-                                    <option value="tout">Afficher la liste des ingredient actifs</option>
-                                    <option value="Afficher">Afficher</option>
-                                    <option value="la">la</option>
-                                    <option value="liste">liste</option>
-                                    <option value="des">des</option>
-                                    <option value="ingredient">ingredient</option>
-                                    <option value="actifs">actifs</option>
-                                </select> 
-                            </td>
-                            <td> Afficher automatiquement, basé sur l'ingrédient </td>
-                            <td> <input type="number" class="lesinputs" name="quantite_besoin" id="quantite_besoin" placeholder="Afficher valeur actuelle"/> </td>
-                            <td> <textarea name="notes_ingredient" id="notes_ingredient" placeholder="Afficher valeur actuelle"> </textarea> </td>
-                        </tr>
-                    </tbody>            
-                </table> <br/>
-
-                <div class="add_button"> 
-                    <input class ="validatebutton" type="button" value="Ajouter un autre ingrédient" id="oneMoreRow"/>`<br/>
-                    <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
-                </div> <br/>
-
-
-                <h3> Input process: </h3>
-                <table >
-                    <thead>
-                        <th> Nom du paramètre process </th>
-                        <th> Description du paramètre process </th>
-                    </thead>
-
-                    <tbody> 
-                        <tr>
-                            <td>  <input type="text" name="nom_parametre" id="nom_parametre" placeholder="Afficher la valeur actuelle?!?!?" size="30" /> </td>
-                            <td> <textarea name="notes_ingredient" id="notes_ingredient" placeholder="Afficher valeur actuelle"> </textarea> </td>
-                        </tr>
-                    </tbody>            
-                </table> <br/>
-
-                <div class="add_button"> 
-                    <input class ="validatebutton" type="button" value="Ajouter un autre ingrédient" id="oneMoreRow"/>`<br/>
-                    <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
-                </div> <br/>
-
-
-
-            </div>
-
             <div class="add_button"> 
-                <input class ="validatebutton" type="button" value="Ajouter une autre étape" id="oneMoreRow"/>`<br/>
-                <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
-            </div> <br/>
-
-        
+                <input class ="validatebutton" type="button" value="Ajouter une autre étape" id="oneMoreStep"/> <br/>
+            </div> 
         </section>
         </form>
+        
+        
+        
+        <!--script for tab style display-->
+        
+        <script>
+         function openTab(tabthingName) {
+            var i;
+            var x = document.getElementsByClassName("tabthing");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            document.getElementById(tabthingName).style.display = "block";
+        }
+        </script>
+        
+        
+        <!scripts to make the toggles work-->
+        
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                this.classList.toggle("active");
+
+                /* Toggle between hiding and showing the active panel */
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                  panel.style.display = "none";
+                } else {
+                  panel.style.display = "block";
+                }
+              });
+            }
+        </script>
+
+        <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+          });
+        }
+        </script>
+
+
+
+            
+        
+        
+        
+        
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous">
+        </script>
+        <!-- bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
         
     </body>
 </html>
