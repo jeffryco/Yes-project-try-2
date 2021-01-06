@@ -18,11 +18,12 @@ and open the template in the editor.
               <section >
                   <form method="post" action="ingredient_modif">
                   
-                    <h1> Ajouter ou modifier un ingrédient </h1> 
+                    <h1> Ajouter ou modifier un ingrédient </h1> <br/> 
                
-                    <strong> Nom de l'ingrédient </strong>
-                    <input class = "name_setting" type="text" name="nom_ingredient" id="nom_ingredient" placeholder="Afficher la valeur actuelle?!?!?" required/> <br/> <br/> 
-                    
+                    <h2> 
+                        Nom de l'ingrédient 
+                        <input class = "name_setting" type="text" name="nom_ingredient" id="nom_ingredient" placeholder="Afficher la valeur actuelle?!?!?" required/> <br/> <br/> 
+                    </h2>
                     
                     
                     <div>
@@ -70,7 +71,7 @@ and open the template in the editor.
                                     <td> Date de périssage de ce stock </td>
                                 </tr>
                                 
-                                <tr>
+                                <tr class="userDefined" id="UD1">
                                     <td> 
                                         <input type="text" name="nom_parametre" id="nom_parametre" placeholder="Nom du nouveau paramètre" size="30" required/>
                                     </td>
@@ -82,9 +83,8 @@ and open the template in the editor.
                                         </select> 
                                     </td>
                                     
-                                    <td> 
-                                        <textarea name="description_parametre" id="description_parametre" cols="45"> </textarea>
-                                    </td>
+                                    <td> <textarea name="description_parametre" id="description_parametre" cols="45"> </textarea> </td>
+                                    <td> <button type="button" id="removeParameter"> <img src="images/trash_img.png" alt="Enlever paramètre" title="Supprimer ligne"/> </button> </td>                 
                                 </tr>                                                            
                             </tbody>  
                         </table>
@@ -99,7 +99,7 @@ and open the template in the editor.
                     </div> <br/>
                     
                     <div class="add_button"> 
-                        <input class ="validatebutton" type="submit" value="Annuler" id="cancelButton" />
+                        <input class ="validatebutton" type="submit" value="Archiver" id="archiveButton" />
                         <input class ="validatebutton" type="submit" value="Soumettre" id="submitButton" /> 
                     </div>
                 
