@@ -33,6 +33,35 @@ section
   text-align: center;
 }
 
+container
+{
+  flex-direction: column;
+}
+
+.row
+{
+    margin: 10px 10px;
+}
+
+.boxitems
+{
+  padding: 1% 5%;
+  border : black solid 2px;
+  border-radius : 20px;
+  background-color: rgb(78, 245, 137);
+  height: 150px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  
+  overflow-x:auto;
+  text-decoration: none;
+  color:black;
+}
+
 table, th, td
 {
     border: 1px solid black;
@@ -44,10 +73,6 @@ table
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2%
-}
-.listof tr:hover 
-{
-    background-color: #f5f5f5;
 }
 
 
@@ -153,13 +178,6 @@ nav
 }
 
 
-.stepRecipe
-{
-    border-top: 2px solid black;
-    border: 10px;
-}
-
-
 .formulaire
 {
   text-decoration: none;
@@ -179,3 +197,46 @@ nav
   background: -webkit-linear-gradient(rgb(10, 100, 130),rgb(43, 232, 227),#2bec9c);
   background: linear-gradient(rgb(10, 100, 130),rgb(43, 232, 227),#2bec9c);
 }
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: transparent;
+  border: solid black 2px;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow-x:auto;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+       
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
